@@ -10,7 +10,7 @@
 <script>
     import restaurantCard from "./CardsComponent.vue"
 export default {
-    name: "RowComponent",
+    name: "restaurentRow",
     components: {
         restaurantCard,
     }
