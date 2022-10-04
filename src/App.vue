@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <restaurentRow v-for="(cards, index) in 3" :key="index"/>
+    <restaurentRow />
   </div>
 </template>
 

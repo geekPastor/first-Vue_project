@@ -23,6 +23,8 @@ export default {
         height: 50vh;
         .title{
             text-align: start;
+            font-size: 30px;
+            font-weight: bold;
         }
         .cards__container{
             width: 100%;
