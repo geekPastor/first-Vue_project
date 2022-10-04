@@ -7,7 +7,7 @@
 <script>
   import restaurentRow from '../components/RowComponent.vue'
 export default {
-    name:"Home",
+    name:"HomePage",
     components:{
       restaurentRow,
     }
