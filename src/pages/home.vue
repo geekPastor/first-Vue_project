@@ -27,14 +27,18 @@ export default {
         }
       }
 
-      //let data_restaurant = [];
+      let data_restaurant = [];
 
       const makeDataRestaurant = () =>{
+        let restaurant__container = [];
 
+        
         //iteration sur la base de donnees
         for(const restaurant of BDD){
-          console.log(restaurant);
+          const new_restaurant = new Restaurant(restaurant.name, restaurant.note, restaurant.image, restaurant.drive_time);
+          restaurant__container.push(new_restaurant);
         }
+
       }
 
       makeDataRestaurant();
