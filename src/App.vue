@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    
+    <!-- Appel du component home -->
     <Home />
 
   </div>
