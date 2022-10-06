@@ -38,8 +38,7 @@ export default {
         //iteration sur la base de donnees
         for(const restaurant of BDD){
           const new_restaurant = new Restaurant(restaurant.name, restaurant.note, restaurant.image, restaurant.drive_time);
-
-
+          
           if (restaurant__container.length === 2) {
 
             restaurant__container.push(new_restaurant);
@@ -50,8 +49,6 @@ export default {
             restaurant__container.push(new_restaurant);
           } 
         }
-
-        console.log(data_restaurant);
 
       }
 
