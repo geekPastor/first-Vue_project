@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  //big data
+  //database
 
   import BDD from '../BDD.js'
 
@@ -18,7 +18,7 @@ export default {
     },
     setup(){
       class Restaurant{
-        constructor(name, note, image, drive_time){
+        constructor (name, note, image, drive_time){
           this.name = name;
           this.note = note;
           this.image = image;
@@ -27,6 +27,7 @@ export default {
       }
 
       var resto = new Restaurant('toto')
+      console.log(BDD);
       console.log(resto);
     }
 }

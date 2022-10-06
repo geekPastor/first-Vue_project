@@ -9,7 +9,7 @@
 <script>
 
 
-import Home from "./pages/Home.vue"
+import Home from "./pages/home.vue"
 
 export default {
   name: 'App',
