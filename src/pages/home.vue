@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  //database
+  //database imporation
 
   import BDD from '../BDD.js'
 
@@ -17,6 +17,7 @@ export default {
       restaurentRow,
     },
     setup(){
+      // creating restaurant class where i'll stock my datas
       class Restaurant{
         constructor (name, note, image, drive_time){
           this.name = name;
@@ -26,9 +27,17 @@ export default {
         }
       }
 
-      var resto = new Restaurant('toto')
-      console.log(BDD);
-      console.log(resto);
+      //let data_restaurant = [];
+
+      const makeDataRestaurant = () =>{
+
+        //iteration sur la base de donnees
+        for(const restaurant of BDD){
+          console.log(restaurant);
+        }
+      }
+
+      makeDataRestaurant();
     }
 }
 </script>
