@@ -1,25 +1,39 @@
 <template>
   <div class="restaurantCard">
-    <div class="cardimage">
+    <div :style="changebackgroundImage" class="cardimage">
 
     </div>
     <div class="cardinfo">
       <div class="top">
-        <p class="name">{{info_restaurantValues.name}}</p>
+        <p class="name">{{info_restaurantValue.name}}</p>
         <p class="note">
-          <span>{{info_restaurantValues.note}}</span>
+          <span>{{info_restaurantValue.note}}</span>
         </p>
       </div>
-      <p class="time">{{info_restaurantValues.drive_time}}</p>
+      <p class="time">{{info_restaurantValue.drive_time}}</p>
     </div>
   </div>
 </template>
 
 <script>
+
+import {computed} from 'vue'
+//import { onMounted } from '@vue/runtime-core'
 export default {
   name: "CardsComponent",
   props:{
-    info_restaurantValue: Object
+    info_restaurantValue: Object,
+  },
+  setup(props){
+    const changebackgroundImage = computed(()=>{
+      return{
+        backgroundImage: `url(${props.info_restaurantValue.image})`
+      }
+    });
+
+    return{
+      changebackgroundImage
+    }
   }
 }
 </script>
@@ -35,7 +49,7 @@ export default {
     }
 
     .cardimage{
-      background-image: url('img/imgcard.png');
+      background-image: url('img/imgcard.png'); 
       background-size: cover;
       background-position: center;
       height: 70%;
