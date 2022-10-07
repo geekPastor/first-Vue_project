@@ -1,6 +1,6 @@
 <template>
   <div class="Home">
-    <restaurentRow v-for="(data, i) in 3" :key="i" :restaurant_Info = "data"/>
+    <restaurentRow v-for="(data, i) in data_restaurant" :key="i" :restaurant_Info = "data"/>
   </div>
 </template>
 
@@ -29,30 +29,30 @@ export default {
         }
       }
 
-      let data_restaurant = [];
+      let data_restaurant = ref([]);
 
       const makeDataRestaurant = () =>{
-        let restaurant__container = ref([]);
+        let restaurant__container = [];
 
 
         //iteration sur la base de donnees 
         for(const restaurant of BDD){
           const new_restaurant = new Restaurant(restaurant.name, restaurant.note, restaurant.image, restaurant.drive_time);
           
-          if (restaurant__container.value.length === 2) {
+          if (restaurant__container.length === 2) {
 
-            restaurant__container.value.push(new_restaurant);
+            restaurant__container.push(new_restaurant);
 
-            data_restaurant.push(restaurant__container);
+            data_restaurant.value.push(restaurant__container);
             restaurant__container = [];
           }else{
-            restaurant__container.value.push(new_restaurant);
+            restaurant__container.push(new_restaurant);
           } 
         }
 
       }
 
-     onMounted( makeDataRestaurant)
+     onMounted( makeDataRestaurant);
 
      return{
       data_restaurant,
