@@ -13,7 +13,7 @@ export default {
     name: "restaurentRow",
     components: {
         restaurantCard,
-    }
+    },
 }
 </script>
 
