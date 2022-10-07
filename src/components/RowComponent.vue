@@ -2,7 +2,7 @@
   <div class="restaurentRow">
     <h2 class="title">Nos restaurants</h2>
     <div class="cards__container">
-        <restaurantCard v-for="(card, index) in 3" :key="index"/>
+        <restaurantCard v-for="(card, index) in restaurant_Info" :info_restaurantValue="card" :key="index"/>
     </div>
   </div>
 </template>
@@ -14,6 +14,9 @@ export default {
     components: {
         restaurantCard,
     },
+    props:{
+        restaurant_Info: Array
+    }
 }
 </script>
 

@@ -5,12 +5,12 @@
     </div>
     <div class="cardinfo">
       <div class="top">
-        <p class="name">Carte D'identite</p>
+        <p class="name">{{info_restaurantValues.name}}</p>
         <p class="note">
-          <span>4.5</span>
+          <span>{{info_restaurantValues.note}}</span>
         </p>
       </div>
-      <p class="time">40 - 60min</p>
+      <p class="time">{{info_restaurantValues.drive_time}}</p>
     </div>
   </div>
 </template>
@@ -18,6 +18,9 @@
 <script>
 export default {
   name: "CardsComponent",
+  props:{
+    info_restaurantValue: Object
+  }
 }
 </script>
 
