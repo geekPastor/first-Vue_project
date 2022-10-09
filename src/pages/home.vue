@@ -68,14 +68,21 @@ export default {
 </script>
 
 <style lang="scss">
-*, *::after, *::before{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 .Home{
   .header{
+    width: 100%;
+    height: 120px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+    img{
+      width: 200px;
+      height: 90%;
+      object-fit: cover;
+    }
   }
 }
 </style>
