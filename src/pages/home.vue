@@ -1,5 +1,11 @@
 <template>
   <div class="Home">
+    <header class="header">
+      <img src="../components/img/imgcard.png" alt="logo">
+      <form action="">
+        <input type="text" name="search" id="search">
+      </form>
+    </header>
     <restaurentRow v-for="(data, i) in data_restaurant" :key="i" :restaurant_Info = "data"/>
   </div>
 </template>
@@ -61,6 +67,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Home{
+  .header{
 
+  }
+}
 </style>

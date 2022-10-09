@@ -30,7 +30,7 @@ export default {
         backgroundImage: `url(${props.info_restaurantValue.image})`
       }
     });
-
+ 
     return{
       changebackgroundImage
     }
