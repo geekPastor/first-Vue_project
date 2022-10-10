@@ -7,6 +7,9 @@
       </form>
     </header>
     <section>
+      <div class="banner">
+
+      </div>
       <restaurentRow v-for="(data, i) in data_restaurant" :key="i" :restaurant_Info = "data"/>
     </section>
   </div>
@@ -112,6 +115,14 @@ export default {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+
+    .banner{
+      width: 100%;
+      height: 200px;
+      background-image: url("../components/img/imgcard.png");
+      background-size: cover;
+      background-position: center center;
+    }
   }
 }
 </style>
