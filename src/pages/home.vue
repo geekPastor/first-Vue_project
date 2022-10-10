@@ -122,7 +122,7 @@ export default {
     height: auto;
     padding: 20px 0;
     position: relative;
-    top: 5rem;
+    top: 6rem;
     display: flex;
     justify-content: center;
     align-content: center;

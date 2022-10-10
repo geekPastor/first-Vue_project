@@ -26,7 +26,7 @@ export default {
 
 #app {
   font-family: "Roboto", sans-serif;
-  padding: 0px;
+  padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
