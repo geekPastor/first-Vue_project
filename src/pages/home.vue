@@ -83,6 +83,16 @@ export default {
       height: 90%;
       object-fit: cover;
     }
+
+    form{
+      input{
+        background-color: #f6f6f6;
+        outline: none;
+        border: none;
+        height: 60px;
+        width: 400px;
+      }
+    }
   }
 }
 </style>
