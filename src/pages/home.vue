@@ -3,10 +3,12 @@
     <header class="header">
       <img src="../components/img/imgcard.png" alt="logo">
       <form action="">
-        <input type="text" name="search" id="search">
+        <input type="text" name="search" id="search" placeholder="ou voulez-vous manger ?">
       </form>
     </header>
-    <restaurentRow v-for="(data, i) in data_restaurant" :key="i" :restaurant_Info = "data"/>
+    <section>
+      <restaurentRow v-for="(data, i) in data_restaurant" :key="i" :restaurant_Info = "data"/>
+    </section>
   </div>
 </template>
 
@@ -73,15 +75,18 @@ export default {
   .header{
     width: 100%;
     height: 120px;
-    border: 1px solid #000;
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    z-index: 1;
 
     img{
       width: 200px;
       height: 90%;
       object-fit: cover;
+    padding: 0 20px;
     }
 
     form{
@@ -91,8 +96,22 @@ export default {
         border: none;
         height: 60px;
         width: 400px;
+        padding: 10px;
+        font-size: 20px;
       }
     }
+  }
+
+  section{
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    position: relative;
+    top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
   }
 }
 </style>

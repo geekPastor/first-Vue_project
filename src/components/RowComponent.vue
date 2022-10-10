@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss">
     .restaurentRow{
-        width: 100%;
+        width: 90%;
         height: 50vh;
         .title{
             text-align: start;
