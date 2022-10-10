@@ -4,6 +4,15 @@
       <img src="../components/img/imgcard.png" alt="logo">
       <form action="">
         <input type="text" name="search" id="search" placeholder="ou voulez-vous manger ?" v-model="user_search_restaurant">
+
+        <div class="search_hint">
+           <div v-for="(restaurant, i) in search_restaurant" :key="i" class="container__search">
+            <div class="wrapper__image">
+              <img :src="restaurant.image" alt="">
+            </div>
+            <h2>{{restaurant.name}}</h2>
+           </div>
+        </div>
       </form>
     </header>
     <section>
@@ -66,12 +75,13 @@ export default {
 
       //user search restaurant
       let user_search_restaurant = ref('');
+      let search_restaurant = ref([]);
 
       watch(user_search_restaurant, (new_value)=>{
-        let regex = RegExp(new_value);
+        let regex = RegExp(new_value.toLowerCase());
 
-        let search_restaurant = all_restaurant.filter(restaurant => regex.test(restaurant.name))
-        console.log(search_restaurant);
+        let new_search_restaurant = all_restaurant.filter(restaurant => regex.test(restaurant.name.toLowerCase()))
+        search_restaurant.value = new_search_restaurant;
       })
 
      onMounted( makeDataRestaurant);
@@ -79,6 +89,7 @@ export default {
      return{
       data_restaurant,
       user_search_restaurant,
+      search_restaurant
      }
     }
 }
@@ -105,6 +116,8 @@ export default {
     }
 
     form{
+      margin-right: 30px;
+      position: relative;
       input{
         background-color: #f6f6f6;
         outline: none;
@@ -113,6 +126,41 @@ export default {
         width: 400px;
         padding: 10px;
         font-size: 20px;
+      }
+      .search_hint{
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        height: 400px;
+        background-color: #fff;
+        border: 1px solid #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+
+        .container__search{
+          width: 70%;
+          height: 30px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .wrapper__image{
+            width: 10%;
+            height: 90%;
+            border: 1px solid #000;
+            border-radius: 50%;
+
+            img{
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+        }
       }
     }
   }
