@@ -139,12 +139,14 @@ export default {
         justify-content: center;
         flex-direction: column;
         gap: 10px;
+        overflow: scroll;
 
         .container__search{
           width: 70%;
-          height: 30px;
+          height: 50px;
+          border: 1px solid #000;
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
           align-items: center;
 
           .wrapper__image{
