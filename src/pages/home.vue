@@ -3,7 +3,7 @@
     <header class="header">
       <img src="../components/img/imgcard.png" alt="logo">
       <form action="">
-        <input type="text" name="search" id="search" placeholder="ou voulez-vous manger ?">
+        <input type="text" name="search" id="search" placeholder="ou voulez-vous manger ?" v-model="user_search_restaurant">
       </form>
     </header>
     <section>
@@ -20,7 +20,7 @@
 
   import BDD from '../BDD.js'
 
-  import { onMounted, ref } from 'vue';
+  import { onMounted, ref, watch } from 'vue';
 
    //components
   import restaurentRow from '../components/RowComponent.vue'
@@ -41,6 +41,7 @@ export default {
       }
 
       let data_restaurant = ref([]);
+      let all_restaurant = []
 
       const makeDataRestaurant = () =>{
         let restaurant__container = [];
@@ -49,7 +50,7 @@ export default {
         //iteration sur la base de donnees 
         for(const restaurant of BDD){
           const new_restaurant = new Restaurant(restaurant.name, restaurant.note, restaurant.image, restaurant.drive_time);
-          
+          all_restaurant.push(new_restaurant)
           if (restaurant__container.length === 2) {
 
             restaurant__container.push(new_restaurant);
@@ -63,10 +64,21 @@ export default {
 
       }
 
+      //user search restaurant
+      let user_search_restaurant = ref('');
+
+      watch(user_search_restaurant, (new_value)=>{
+        let regex = RegExp(new_value);
+
+        let search_restaurant = all_restaurant.filter(restaurant => regex.test(restaurant.name))
+        console.log(search_restaurant);
+      })
+
      onMounted( makeDataRestaurant);
 
      return{
       data_restaurant,
+      user_search_restaurant,
      }
     }
 }
